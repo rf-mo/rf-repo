@@ -6,7 +6,7 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello from Kubernetes!\n');
+  res.end('Hello from Githubs!\n');
 });
 
 server.listen(port, hostname, () => {
