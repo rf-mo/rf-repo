@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Softchoice PM Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="page-header">
+    <h1>Softchoice Project Management Hub</h1>
+    <p>
+      Personal workspace for a Google Cloud Solution Consultant to manage projects,
+      weekly priorities, and monthly outcomes.
+    </p>
+  </header>
+
+  <main class="layout">
+    <section class="card">
+      <h2>Profile Snapshot</h2>
+      <div class="grid two-col">
+        <label>
+          Name
+          <input id="profileName" placeholder="Your name" />
+        </label>
+        <label>
+          Role
+          <input id="profileRole" value="Google Cloud Solution Consultant" />
+        </label>
+        <label>
+          Company
+          <input id="profileCompany" value="Softchoice" />
+        </label>
+        <label>
+          Current Focus Month
+          <input id="focusMonth" type="month" />
+        </label>
+      </div>
+      <button id="saveProfile" class="btn">Save Profile</button>
+    </section>
+
+    <section class="card">
+      <h2>Project Tracker</h2>
+      <form id="projectForm" class="grid two-col">
+        <label>
+          Project Name
+          <input id="projectName" required placeholder="e.g., GCP Landing Zone Migration" />
+        </label>
+        <label>
+          Client / Team
+          <input id="projectClient" required placeholder="e.g., Internal Cloud Team" />
+        </label>
+        <label>
+          Stage
+          <select id="projectStage" required>
+            <option value="Discovery">Discovery</option>
+            <option value="Design">Design</option>
+            <option value="Implementation">Implementation</option>
+            <option value="Optimization">Optimization</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </label>
+        <label>
+          Next Milestone Date
+          <input id="projectDate" type="date" required />
+        </label>
+        <label class="full">
+          Notes
+          <textarea id="projectNotes" rows="3" placeholder="Architecture dependencies, blockers, stakeholder notes..."></textarea>
+        </label>
+        <button class="btn full" type="submit">Add Project</button>
+      </form>
+      <ul id="projectList" class="item-list"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Weekly Task Planner</h2>
+      <form id="weeklyForm" class="grid two-col">
+        <label>
+          Week Starting
+          <input id="weekStart" type="date" required />
+        </label>
+        <label>
+          Priority
+          <select id="weekPriority" required>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+        </label>
+        <label class="full">
+          Task
+          <input id="weekTask" required placeholder="e.g., Prepare GKE cost optimization workshop" />
+        </label>
+        <button class="btn full" type="submit">Add Weekly Task</button>
+      </form>
+      <ul id="weeklyList" class="item-list"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Monthly Outcome Tracker</h2>
+      <form id="monthlyForm" class="grid two-col">
+        <label>
+          Month
+          <input id="monthLabel" type="month" required />
+        </label>
+        <label>
+          Status
+          <select id="monthStatus" required>
+            <option value="Planned">Planned</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Achieved">Achieved</option>
+            <option value="Deferred">Deferred</option>
+          </select>
+        </label>
+        <label class="full">
+          Outcome / KPI
+          <input id="monthOutcome" required placeholder="e.g., Deliver 4 customer architecture reviews" />
+        </label>
+        <button class="btn full" type="submit">Add Monthly Outcome</button>
+      </form>
+      <ul id="monthlyList" class="item-list"></ul>
+    </section>
+  </main>
+
+  <template id="itemTemplate">
+    <li class="item-row">
+      <div class="item-content"></div>
+      <button class="danger" type="button">Delete</button>
+    </li>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
