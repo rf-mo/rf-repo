@@ -1,0 +1,13 @@
+body { font-family: Inter, system-ui, sans-serif; background:#f5f6f9; margin:0; }
+.app { max-width:1100px; margin:0 auto; padding:16px; }
+.tabs { display:flex; gap:8px; margin-bottom:12px; }
+button { border:1px solid #bbb; background:#fff; border-radius:8px; padding:8px 10px; cursor:pointer; }
+button.active, .chip.active, .primary { background:#2251ff; color:white; border-color:#2251ff; }
+.grid { display:grid; grid-template-columns: 2fr 1fr; gap:12px; }
+.card { background:white; border-radius:12px; padding:12px; box-shadow:0 1px 2px rgba(0,0,0,.08); }
+.full { grid-column: 1 / -1; }
+textarea, input, select { width:100%; margin-bottom:8px; padding:8px; border-radius:8px; border:1px solid #ccc; }
+.row { display:flex; gap:8px; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; }
+.chip { font-size:12px; }
+pre { white-space:pre-wrap; background:#f7f8ff; padding:8px; border-radius:8px; }
